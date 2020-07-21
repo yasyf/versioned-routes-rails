@@ -50,7 +50,7 @@ end
 $ rake routes
 ```
 
-```text
+<pre>
                    Prefix Verb   URI Pattern                                                                              Controller#Action
       read_v1_message POST   /api/v1/messages/:id/read(.:format)                                                  v1/messages#read {:format=>:json, :api_version=>1}
           v1_messages GET    /api/v1/messages(.:format)                                                           v1/messages#index {:format=>:json, :api_version=>1}
@@ -66,7 +66,7 @@ $ rake routes
                           PATCH  /api/v2/messages/:id(.:format)                                                       v1/messages#update {:format=>:json, :api_version=>1}
                           PUT    /api/v2/messages/:id(.:format)                                                       v1/messages#update {:format=>:json, :api_version=>1}
                           DELETE /api/v2/messages/:id(.:format)                                                       v1/messages#destroy {:format=>:json, :api_version=>1}
-```
+</pre>
 
 ## Development
 
