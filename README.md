@@ -22,6 +22,8 @@ Or install it yourself as:
 
 ## Usage
 
+`require 'versioned_routes'` in your `routes.rb` to load the `version` DSL.
+
 Controllers must be namespaced as `VN::ThingController`, where `N` is the API version.
 
 For example, let's define our V1 API as a set of `Message` resources, with some member actions. These will map to `V1::MessagesController`.
@@ -29,6 +31,8 @@ For example, let's define our V1 API as a set of `Message` resources, with some 
 Our V2 API will only change the logic of `V1::MessagesController#show`, so we'll only specify that action in the `version 2` block. Requests to `/api/v2/messages/:id` will be routed to `V2::MessagesController#show`, while all other `/api/v2/messages` requests will still be routed to `V1::MessagesController`.
 
 ```ruby
+require 'versioned_routes'
+
 Rails.application.routes.draw do
   scope :api do
     version 1 do
